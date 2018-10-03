@@ -19,7 +19,7 @@ acts <- data[complete.cases(data),]
 ```r
 day_sums <- tapply(acts$steps,acts$date,sum)  
 
-hist(day_sums,main = "Histogram of total number of sptes per day",xlab = "Steps per day")
+hist(day_sums,col = "blue",main = "Histogram of total number of sptes per day",xlab = "Steps per day")
 ```
 
 ![](PA1_template_files/figure-html/hist1-1.png)<!-- -->
@@ -74,7 +74,7 @@ sum(!complete.cases(data))
 ## [1] 2304
 ```
 
--Now we will create a new dataset that is equal to the original dataset but with the missing data filled in
+-Now we will create a new dataset that is equal to the original dataset but with the missing data filled in. We will do this by replacing the missing values with the averages of steps taken for every interval
 
 
 ```r
@@ -93,7 +93,7 @@ for (i in 1:length(data1$steps)) {
 ```r
 day_sums1 <- tapply(data1$steps, data1$date, sum)
 
-hist(day_sums1,main = "Histogram of total number of steps per day(fixed)",xlab = "Steps per day")
+hist(day_sums1,col = "blue",main = "Histogram of total number of steps per day(fixed)",xlab = "Steps per day")
 ```
 
 ![](PA1_template_files/figure-html/hist2-1.png)<!-- -->
